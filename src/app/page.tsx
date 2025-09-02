@@ -33,24 +33,26 @@ export default function Home() {
     <div
       className={`min-h-screen ${backgroundColors[bgColorIndex]} flex items-center justify-center p-8 transition-colors duration-500`}
     >
-      <div className="text-center">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8">Counter</h1>
+      <div className="text-center bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto">
+        <h1 className="text-4xl font-bold text-gray-800 mb-6">🔢 Counter</h1>
 
-        <div className="text-6xl font-bold text-gray-900 mb-8">{count}</div>
+        <div className="text-7xl font-bold text-gray-900 mb-6 bg-gray-100 rounded-lg py-4">
+          {count}
+        </div>
 
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-3 justify-center">
           <button
             onClick={incrementCounter}
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-200 hover:scale-105 shadow-md"
           >
-            +1
+            Add
           </button>
 
           <button
             onClick={resetCounter}
-            className="px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors"
+            className="px-8 py-3 bg-gray-600 hover:bg-gray-700 text-white font-semibold rounded-lg transition-all duration-200 hover:scale-105 shadow-md"
           >
-            Reset
+            🔄 Reset
           </button>
         </div>
       </div>
