@@ -6,9 +6,24 @@ import { useState } from "react";
 
 export default function Home() {
   const [count, setCount] = useState(0);
+  const [bgColorIndex, setBgColorIndex] = useState(0);
+
+  const backgroundColors = [
+    "bg-gray-50",
+    "bg-blue-50",
+    "bg-green-50",
+    "bg-yellow-50",
+    "bg-red-50",
+    "bg-purple-50",
+    "bg-pink-50",
+    "bg-indigo-50",
+    "bg-orange-50",
+    "bg-teal-50",
+  ];
 
   const incrementCounter = () => {
     setCount((c: number) => c + 1);
+    setBgColorIndex((prevIndex) => (prevIndex + 1) % backgroundColors.length);
   };
 
   const decrementCounter = () => {
@@ -17,10 +32,13 @@ export default function Home() {
 
   const resetCounter = () => {
     setCount(0);
+    setBgColorIndex(0);
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
+    <div
+      className={`min-h-screen ${backgroundColors[bgColorIndex]} flex items-center justify-center p-8 transition-colors duration-500`}
+    >
       <div className="text-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-8">Counter</h1>
 
